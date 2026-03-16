@@ -648,7 +648,7 @@
       </div>
       <div class="card-actions">
         <button class="primary-btn" type="button" data-open-scanner-btn>${claimed ? 'Ver sello' : 'Abrir QR'}</button>
-        <button class="soft-btn" type="button" data-open-qr-direct>qr-checkin.html</button>
+        <button class="soft-btn" type="button" data-open-qr-direct>qr-checkin</button>
       </div>`;
     $('[data-open-scanner-btn]')?.addEventListener('click', () => openScanner(activeEvent.id));
     $('[data-open-qr-direct]')?.addEventListener('click', () => window.open(`qr-checkin.html?event=${activeEvent.id}`, '_blank', 'noopener'));
