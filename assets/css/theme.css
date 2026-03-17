@@ -24,6 +24,8 @@
   --brand-surface-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 107, 53, 0.18));
   --brand-surface-border: rgba(255, 255, 255, 0.18);
   --brand-surface-shadow: 0 16px 36px rgba(0, 0, 0, 0.26);
+  --brand-mark-shell-surface-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 107, 53, 0.18));
+  --brand-mark-shell-border: rgba(255, 255, 255, 0.18);
 }
 
 :root[data-theme='light'] {
@@ -61,10 +63,12 @@
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(236, 243, 255, 0.96));
   --status-icon-tone: rgba(15, 23, 42, 0.78);
   --brand-word-filter: brightness(0) saturate(0%) drop-shadow(0 0 16px rgba(255, 179, 71, 0.24));
-  --brand-mark-filter: brightness(0) saturate(0%) drop-shadow(0 0 16px rgba(255, 107, 53, 0.2));
+  --brand-mark-filter: brightness(0) saturate(0%) invert(1) drop-shadow(0 0 16px rgba(255, 107, 53, 0.22));
   --brand-surface-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 223, 207, 0.92));
   --brand-surface-border: rgba(255, 107, 53, 0.14);
   --brand-surface-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+  --brand-mark-shell-surface-bg: linear-gradient(135deg, rgba(20, 18, 30, 0.96), rgba(64, 44, 84, 0.9));
+  --brand-mark-shell-border: rgba(255, 255, 255, 0.26);
 }
 
 body {
@@ -116,11 +120,16 @@ body {
 }
 
 .brand-word-wrap,
-.brand-mark--shell,
 .device-brandbar,
 .sidebar-brand-lockup {
   background: var(--brand-surface-bg);
   border-color: var(--brand-surface-border);
+  box-shadow: var(--brand-surface-shadow);
+}
+
+.brand-mark--shell {
+  background: var(--brand-mark-shell-surface-bg);
+  border-color: var(--brand-mark-shell-border);
   box-shadow: var(--brand-surface-shadow);
 }
 
@@ -189,4 +198,9 @@ body {
 
 :root[data-theme='light'] .danger-btn {
   color: #b91c1c;
+}
+
+:root[data-theme='light'] .device-switches,
+:root[data-theme='light'] .toolbar-utilities {
+  background: rgba(255, 255, 255, 0.58);
 }

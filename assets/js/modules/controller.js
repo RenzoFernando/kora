@@ -1,6 +1,5 @@
 import {
   $, $$,
-  artistFor,
   clearStoredState,
   createFreshState,
   data,
@@ -15,11 +14,13 @@ import {
   applyContrast,
   applyDevice,
   applyTheme,
+  burstNotesFrom,
   closeAllOverlays,
   closeOverlay,
   initClock,
   openOverlay,
   renderViewOnly,
+  scrollAppToTop,
   showToast
 } from './ui.js';
 import {
@@ -104,6 +105,16 @@ function setView(view) {
   state.view = view;
   setState(state);
   renderViewOnly(view);
+}
+
+function goHome(triggerNode = null) {
+  const state = getState();
+  state.view = 'discover';
+  setState(state);
+  closeAllOverlays();
+  renderApp(state);
+  scrollAppToTop();
+  burstNotesFrom(triggerNode);
 }
 
 async function selectArtist(artistId, shouldPlay = false) {
@@ -285,6 +296,12 @@ function saveReview() {
 
 async function handleClick(event) {
   const target = event.target;
+  const homeTrigger = target.closest('[data-go-home]');
+  if (homeTrigger) {
+    goHome(homeTrigger);
+    return;
+  }
+
   const selectCard = target.closest('[data-select-artist]');
   if (selectCard && !target.closest('[data-card-play], [data-card-save], button')) {
     await selectArtist(selectCard.dataset.selectArtist);
@@ -561,6 +578,12 @@ function handleOverlayClick(event) {
 }
 
 function handleKeydown(event) {
+  const homeTrigger = event.target.closest?.('[data-go-home]');
+  if (homeTrigger && (event.key === 'Enter' || event.key === ' ')) {
+    event.preventDefault();
+    goHome(homeTrigger);
+    return;
+  }
   if (event.key !== 'Escape') return;
   const openOverlayNode = document.querySelector('.overlay.is-open');
   if (!openOverlayNode) return;

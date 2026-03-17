@@ -285,7 +285,7 @@ function renderPlayer(state) {
   $('[data-player-name]').textContent = `${artist.name} · ${artist.genre}`;
   $('[data-player-story]').textContent = showCaptions ? artist.story : 'Activa la historia y etiquetas para ver el contexto de la cápsula.';
   $('[data-player-match]').textContent = `${artist.match}% match`;
-  $('[data-player-duration]').textContent = artist.duration;
+  $('[data-player-duration]').textContent = state.settings.preview30 ? '0:30' : artist.duration;
   $('[data-player-total]').textContent = formatTime(snapshot.total);
   $('[data-player-current]').textContent = formatTime(snapshot.currentTime);
   $('[data-player-range]').value = String(snapshot.currentTime);
@@ -502,7 +502,7 @@ function renderNowPlaying(state) {
         <p>${escapeHtml(artist.name)} · ${escapeHtml(artist.genre)}</p>
       </div>
     </div>
-    <div class="progress"><span data-now-playing-progress style="width:${Math.min(100, snapshot.currentTime / 30 * 100)}%"></span></div>
+    <div class="progress"><span data-now-playing-progress style="width:${Math.min(100, snapshot.currentTime / Math.max(1, snapshot.total) * 100)}%"></span></div>
     <div class="pill-row">
       <span class="mini-pill">${snapshot.isPlaying ? 'Reproduciendo' : 'Pausado'}</span>
       <span class="mini-pill">${formatTime(snapshot.currentTime)} / ${formatTime(snapshot.total)}</span>
@@ -653,7 +653,7 @@ function renderLiveAudioState() {
     range.value = String(snapshot.currentTime);
   }
   if (nowPlayingProgress) {
-    nowPlayingProgress.style.width = `${Math.min(100, snapshot.currentTime / 30 * 100)}%`;
+    nowPlayingProgress.style.width = `${Math.min(100, snapshot.currentTime / Math.max(1, snapshot.total) * 100)}%`;
   }
   const toggle = $('[data-player-toggle]');
   if (toggle) toggle.textContent = snapshot.isPlaying ? 'Pausar' : 'Reproducir';

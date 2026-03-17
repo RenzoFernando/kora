@@ -102,15 +102,47 @@ function closeAllOverlays() {
   document.body.classList.remove('overlay-open');
 }
 
+function scrollAppToTop() {
+  ['.app-main', '.app-sidebar', '.app-rail'].forEach((selector) => {
+    $$(selector).forEach((node) => {
+      node.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+}
+
+function burstNotesFrom(node) {
+  if (!node) return;
+  const rect = node.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  const notes = ['♪', '♫', '♩', '♬'];
+  notes.forEach((symbol, index) => {
+    const note = document.createElement('span');
+    note.className = 'note-burst';
+    note.textContent = symbol;
+    note.style.left = `${centerX}px`;
+    note.style.top = `${centerY}px`;
+    note.style.setProperty('--note-x', `${(index - 1.5) * 22}px`);
+    note.style.setProperty('--note-y', `${-36 - index * 8}px`);
+    note.style.animationDelay = `${index * 50}ms`;
+    document.body.append(note);
+    note.addEventListener('animationend', () => {
+      note.remove();
+    }, { once: true });
+  });
+}
+
 export {
   applyContrast,
   applyDevice,
   applyTheme,
+  burstNotesFrom,
   closeAllOverlays,
   closeOverlay,
   initClock,
   openOverlay,
   renderViewOnly,
+  scrollAppToTop,
   showToast,
   syncThemeButtons,
   updateClock

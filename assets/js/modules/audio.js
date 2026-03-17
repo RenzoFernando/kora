@@ -11,6 +11,12 @@ function runUiUpdate() {
   onUiUpdate();
 }
 
+function currentTotal() {
+  const fallback = 30;
+  const fullTotal = Math.max(1, Math.floor(audio.duration || fallback));
+  return getPreviewEnabled() ? Math.min(30, fullTotal) : fullTotal;
+}
+
 function syncTick() {
   clearInterval(playerTick);
   playerTick = setInterval(() => {
@@ -94,7 +100,7 @@ function seekAudio(value) {
 }
 
 function getAudioSnapshot(artistId) {
-  const total = Math.min(30, Math.floor(audio.duration || 30)) || 30;
+  const total = currentTotal();
   const isCurrentArtist = audio.dataset.artistId === artistId;
   const currentTime = isCurrentArtist ? Math.min(audio.currentTime || 0, total) : 0;
   return {
