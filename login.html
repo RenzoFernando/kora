@@ -23,45 +23,47 @@
   </style>
 </head>
 <body>
-  <main class="login-wrap">
-    <section class="login-hero">
-      <div class="login-copy">
-        <p class="eyebrow">Acceso de demostración</p>
-        <h1>Entrar a KORA</h1>
-        <p>Selecciona un oyente del equipo o un rol demo. El perfil se guarda en localStorage y abre el prototipo principal.</p>
-      </div>
-      <div class="login-brand">
-        <img class="brand-mark brand-mark--shell" src="assets/img/icono.svg" alt="Marca KORA">
-        <span class="brand-word-wrap"><img class="brand-word" src="assets/img/logo.svg" alt="KORA"></span>
-      </div>
-    </section>
+<main class="login-wrap">
+  <section class="login-hero">
+    <div class="login-copy">
+      <p class="eyebrow">Acceso de demostración</p>
+      <h1>Entrar a KORA</h1>
+      <p>Selecciona un oyente del equipo o un rol demo. El perfil se guarda en localStorage y abre el prototipo principal.</p>
+    </div>
+    <div class="login-brand">
+        <span class="brand-mark--shell">
+          <img src="assets/img/icono.svg" alt="Marca KORA">
+        </span>
+      <span class="brand-word-wrap"><img class="brand-word" src="assets/img/logo.svg" alt="KORA"></span>
+    </div>
+  </section>
 
-    <section class="overlay-card login-card">
-      <div class="overlay-sections">
-        <section>
-          <div class="section-head simple-head">
-            <div>
-              <p class="eyebrow">Equipo</p>
-              <h2 class="section-title small-title">Oyentes del proyecto</h2>
-            </div>
-            <a class="soft-btn" href="index.html">Abrir app</a>
+  <section class="overlay-card login-card">
+    <div class="overlay-sections">
+      <section>
+        <div class="section-head simple-head">
+          <div>
+            <p class="eyebrow">Equipo</p>
+            <h2 class="section-title small-title">Oyentes del proyecto</h2>
           </div>
-          <div class="profile-grid" id="login-team-grid"></div>
-        </section>
-        <section>
-          <div class="section-head simple-head">
-            <div>
-              <p class="eyebrow">Roles demo</p>
-              <h2 class="section-title small-title">Cuentas para la presentación</h2>
-            </div>
+          <a class="soft-btn" href="index.html">Abrir app</a>
+        </div>
+        <div class="profile-grid" id="login-team-grid"></div>
+      </section>
+      <section>
+        <div class="section-head simple-head">
+          <div>
+            <p class="eyebrow">Roles demo</p>
+            <h2 class="section-title small-title">Cuentas para la presentación</h2>
           </div>
-          <div class="profile-grid" id="login-role-grid"></div>
-        </section>
-      </div>
-    </section>
-  </main>
+        </div>
+        <div class="profile-grid" id="login-role-grid"></div>
+      </section>
+    </div>
+  </section>
+</main>
 
-  <script src="assets/data/data.js"></script>
-  <script type="module" src="assets/js/login.js"></script>
+<script src="assets/data/data.js"></script>
+<script type="module" src="assets/js/login.js"></script>
 </body>
 </html>

@@ -146,10 +146,9 @@ body {
 }
 
 .brand-mark--shell {
-    background: var(--brand-mark-shell-surface-bg);
-    border-color: var(--brand-mark-shell-border);
-    box-shadow: 0 0 0 1px rgba(255, 179, 71, 0.14) inset, var(--brand-surface-shadow);
-    filter: var(--brand-mark-shell-filter);
+    background: var(--brand-surface-bg);
+    border-color: var(--brand-surface-border);
+    box-shadow: var(--brand-surface-shadow);
 }
 
 .brand-word,
