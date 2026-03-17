@@ -361,6 +361,22 @@ window.KORA_DATA = {
       reward: 220,
       type: 'playlistCount',
       threshold: 1
+    },
+    {
+      id: 'review-once',
+      name: 'Deja una reseña',
+      description: 'Califica o comenta una cápsula para reforzar la señal comunitaria.',
+      reward: 160,
+      type: 'reviewCount',
+      threshold: 1
+    },
+    {
+      id: 'voice-review-once',
+      name: 'Publica una cápsula de voz',
+      description: 'Graba hasta 30 segundos y deja feedback hablado sobre la canción.',
+      reward: 260,
+      type: 'voiceReviewCount',
+      threshold: 1
     }
   ],
   shareTargets: [

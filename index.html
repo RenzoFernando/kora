@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>try{const raw=localStorage.getItem('kora-prototype-v3-state');const parsed=raw?JSON.parse(raw):null;document.documentElement.dataset.theme=parsed?.settings?.themeMode==='light'?'light':'dark';}catch(error){document.documentElement.dataset.theme='dark';}</script>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -25,6 +26,7 @@
                 <button class="toolbar-btn" type="button" data-device-option="desktop">Computador</button>
             </div>
             <div class="toolbar-utilities">
+                <button class="toolbar-btn" type="button" data-theme-toggle>Modo claro</button>
                 <button class="toolbar-btn" type="button" data-open-login>Perfiles demo</button>
                 <button class="toolbar-btn" type="button" data-reset-state>Reiniciar</button>
             </div>
@@ -108,7 +110,10 @@
                                     <p class="profile-sub" data-profile-role>Oyente exploradora</p>
                                 </div>
                             </div>
-                            <button class="icon-btn" type="button" aria-label="Abrir ajustes" data-open-settings>⚙</button>
+                            <div class="header-actions">
+                                <button class="icon-btn" type="button" aria-label="Cambiar tema" data-theme-toggle-icon>☀</button>
+                                <button class="icon-btn" type="button" aria-label="Abrir ajustes" data-open-settings>⚙</button>
+                            </div>
                         </header>
 
                         <section class="app-main content-scroll">
@@ -195,6 +200,24 @@
                                         <div class="insight-stack" data-player-insights></div>
                                     </article>
                                 </div>
+
+                                <div class="dual-grid dual-grid--reviews">
+                                    <article class="panel-card">
+                                        <div class="panel-head">
+                                            <strong>Reseñas y cápsulas</strong>
+                                            <span class="mini-pill" data-review-summary-count>0 reseñas</span>
+                                        </div>
+                                        <div class="review-summary" data-player-review-summary></div>
+                                        <form class="review-form" data-review-form></form>
+                                    </article>
+                                    <article class="panel-card">
+                                        <div class="panel-head">
+                                            <strong>Comunidad</strong>
+                                            <span class="mini-pill" data-review-average>Sin rating</span>
+                                        </div>
+                                        <div class="review-list" data-review-list></div>
+                                    </article>
+                                </div>
                             </section>
 
                             <section class="view" data-view="events">
@@ -224,7 +247,7 @@
                                     <article class="panel-card">
                                         <div class="panel-head">
                                             <strong>Compartir cápsula</strong>
-                                            <span class="mini-pill">TikTok / X / Instagram / WhatsApp</span>
+                                            <span class="mini-pill">⇧</span>
                                         </div>
                                         <div class="share-grid" data-share-grid></div>
                                         <div class="community-actions">
@@ -411,6 +434,6 @@
 <div class="toast" data-toast aria-live="polite"></div>
 
 <script src="assets/data/data.js"></script>
-<script src="assets/js/app.js"></script>
+<script type="module" src="assets/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,152 @@
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.dual-grid--reviews {
+  grid-template-columns: 1.04fr 0.96fr;
+}
+
+.review-summary,
+.review-form,
+.review-list {
+  display: grid;
+  gap: 0.82rem;
+}
+
+.review-summary-grid {
+  display: grid;
+  gap: 0.82rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.review-metric {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.88rem;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.review-metric strong {
+  font-family: var(--font-head);
+  font-size: 1.28rem;
+  line-height: 1;
+}
+
+.review-metric span:last-child {
+  color: var(--text-soft);
+}
+
+.rating-row,
+.review-card-head,
+.review-meta,
+.review-author,
+.review-foot,
+.voice-recorder-copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.star-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.24rem;
+}
+
+.star-btn {
+  width: 2.1rem;
+  min-height: 2.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-faint);
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.star-btn.is-active {
+  color: var(--accent-2);
+  border-color: rgba(255, 179, 71, 0.34);
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.18), rgba(255, 179, 71, 0.14));
+}
+
+.review-textarea {
+  min-height: 7rem;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.review-textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.voice-recorder,
+.review-card {
+  display: grid;
+  gap: 0.72rem;
+  padding: 0.92rem;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.voice-recorder.is-recording {
+  border-color: rgba(255, 107, 53, 0.34);
+  box-shadow: 0 0 0 1px rgba(255, 107, 53, 0.12) inset;
+}
+
+.voice-recorder-copy {
+  align-items: flex-start;
+}
+
+.voice-recorder-copy strong,
+.review-author strong {
+  font-family: var(--font-head);
+  line-height: 1;
+}
+
+.voice-recorder-copy span,
+.review-author span,
+.review-date,
+.review-copy,
+.review-submit-row .helper-copy {
+  color: var(--text-soft);
+}
+
+.review-author img {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.92rem;
+  object-fit: cover;
+}
+
+.review-author {
+  justify-content: flex-start;
+}
+
+.review-author > div,
+.voice-recorder-copy {
+  min-width: 0;
+}
+
+.review-meta {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.review-copy {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.review-foot {
+  justify-content: flex-start;
+}

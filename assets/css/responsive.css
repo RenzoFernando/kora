@@ -1,0 +1,32 @@
+@media (max-width: 1100px) {
+  .dual-grid--reviews {
+    grid-template-columns: 1fr;
+  }
+
+  .review-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .header-actions {
+    gap: 0.38rem;
+  }
+
+  .rating-row,
+  .review-card-head,
+  .review-meta,
+  .voice-recorder-copy {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .review-submit-row {
+    align-items: stretch;
+  }
+
+  .login-brand {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
