@@ -1,19 +1,33 @@
 :root {
     --body-background:
-            radial-gradient(circle at 18% 18%, rgba(255, 107, 53, 0.14), transparent 22%),
-            radial-gradient(circle at 82% 16%, rgba(157, 123, 245, 0.16), transparent 24%),
-            radial-gradient(circle at 50% 88%, rgba(34, 211, 168, 0.08), transparent 18%),
-            linear-gradient(180deg, #0b0910 0%, #06060a 100%);
+            radial-gradient(circle at 50% 50%, rgba(72, 83, 132, 0.34), transparent 24%),
+            radial-gradient(circle at 16% 16%, rgba(255, 107, 53, 0.12), transparent 22%),
+            radial-gradient(circle at 84% 14%, rgba(157, 123, 245, 0.15), transparent 25%),
+            radial-gradient(circle at 50% 86%, rgba(34, 211, 168, 0.06), transparent 20%),
+            linear-gradient(180deg, #141924 0%, #0b0d14 54%, #06070b 100%);
     --toolbar-surface: rgba(15, 12, 22, 0.74);
+    --device-frame-surface: linear-gradient(180deg, #111319 0%, #07080d 46%, #020304 100%);
+    --device-frame-border: rgba(255, 255, 255, 0.08);
+    --device-frame-inner-line: rgba(255, 255, 255, 0.03);
+    --device-frame-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset, 0 42px 96px rgba(0, 0, 0, 0.52);
+    --device-shell-aura: radial-gradient(circle at 50% 50%, rgba(88, 102, 168, 0.34), rgba(157, 123, 245, 0.12) 28%, rgba(255, 107, 53, 0.08) 42%, transparent 72%);
     --device-screen-surface:
-            radial-gradient(circle at 16% 10%, rgba(255, 107, 53, 0.14), transparent 24%),
-            radial-gradient(circle at 84% 14%, rgba(157, 123, 245, 0.15), transparent 22%),
-            linear-gradient(180deg, #0f0d16 0%, #08080d 100%);
-    --sidebar-surface: rgba(255, 255, 255, 0.02);
+            radial-gradient(circle at 18% 10%, rgba(255, 107, 53, 0.14), transparent 24%),
+            radial-gradient(circle at 84% 14%, rgba(157, 123, 245, 0.16), transparent 24%),
+            linear-gradient(180deg, #151925 0%, #0c1018 56%, #07090e 100%);
+    --device-screen-border: rgba(255, 255, 255, 0.08);
+    --device-screen-inner-line: rgba(255, 255, 255, 0.04);
+    --device-screen-halo: rgba(96, 110, 182, 0.14);
+    --device-hardware-surface: rgba(8, 9, 14, 0.96);
+    --device-lens-surface: #23283a;
+    --device-led-surface: rgba(34, 211, 168, 0.86);
+    --sidebar-surface: linear-gradient(180deg, rgba(23, 24, 36, 0.78), rgba(13, 14, 22, 0.64));
+    --rail-surface: linear-gradient(180deg, rgba(17, 18, 27, 0.46), rgba(10, 11, 18, 0.26));
     --overlay-surface: rgba(6, 6, 10, 0.76);
     --overlay-card-surface: linear-gradient(180deg, rgba(18, 16, 24, 0.96), rgba(10, 10, 14, 0.98));
     --bottom-nav-surface: rgba(8, 8, 12, 0.88);
     --toast-surface: rgba(11, 11, 15, 0.96);
+    --desktop-stand-surface: linear-gradient(180deg, rgba(43, 45, 58, 0.98), rgba(16, 17, 24, 0.98));
     --map-surface-background:
             linear-gradient(rgba(157, 123, 245, 0.08) 1px, transparent 1px),
             linear-gradient(90deg, rgba(157, 123, 245, 0.08) 1px, transparent 1px),
@@ -97,8 +111,25 @@ body {
     background: var(--toolbar-surface);
 }
 
+.device-shell::after {
+    content: '';
+    position: absolute;
+    inset: 8% 10% 7%;
+    background:
+            radial-gradient(circle at 50% 50%, rgba(78, 92, 152, 0.34), rgba(23, 28, 44, 0.2) 38%, transparent 70%);
+    filter: blur(40px);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+}
+
 .device-screen {
     background: var(--device-screen-surface);
+    border-color: var(--device-screen-border);
+    box-shadow:
+            inset 0 0 0 1px var(--device-screen-inner-line),
+            0 24px 48px rgba(0, 0, 0, 0.18),
+            0 0 28px var(--device-screen-halo);
 }
 
 .app-sidebar {
