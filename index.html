@@ -1,441 +1,444 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KORA · prototipo app demo</title>
-    <link rel="icon" href="assets/img/icono.svg" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <script>try{const raw=localStorage.getItem('kora-prototype-v3-state');const parsed=raw?JSON.parse(raw):null;document.documentElement.dataset.theme=parsed?.settings?.themeMode==='light'?'light':'dark';}catch(error){document.documentElement.dataset.theme='dark';}</script>
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-<div class="app-page">
-    <header class="shell-toolbar">
-        <div class="brand-lockup brand-lockup--shell" data-go-home tabindex="0" role="button" aria-label="Ir al inicio de KORA">
-      <span class="brand-word-wrap">
-        <img class="brand-word" src="assets/img/logo.svg" alt="KORA">
-      </span>
-        </div>
-        <div class="shell-actions">
-            <div class="device-switches" role="tablist" aria-label="Cambiar dispositivo">
-                <button class="toolbar-btn is-active" type="button" data-device-option="phone">Celular</button>
-                <button class="toolbar-btn" type="button" data-device-option="tablet">Tablet</button>
-                <button class="toolbar-btn" type="button" data-device-option="desktop">Computador</button>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KORA · prototipo app demo</title>
+        <link rel="icon" href="assets/img/icono.svg" type="image/svg+xml">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+        <script>try{const raw=localStorage.getItem('kora-prototype-v3-state');const parsed=raw?JSON.parse(raw):null;document.documentElement.dataset.theme=parsed?.settings?.themeMode==='light'?'light':'dark';}catch(error){document.documentElement.dataset.theme='dark';}</script>
+        <link rel="stylesheet" href="assets/css/styles.css">
+    </head>
+    <body>
+    <div class="app-page">
+        <header class="shell-toolbar">
+            <div class="brand-lockup brand-lockup--shell" data-go-home tabindex="0" role="button" aria-label="Ir al inicio de KORA">
+          <span class="brand-word-wrap">
+            <img class="brand-word" src="assets/img/logo.svg" alt="KORA">
+          </span>
             </div>
-            <div class="toolbar-utilities">
-                <button class="toolbar-btn" type="button" data-theme-toggle>Modo claro</button>
-                <button class="toolbar-btn" type="button" data-open-login>Perfiles demo</button>
-                <button class="toolbar-btn" type="button" data-reset-state>Reiniciar</button>
-            </div>
-            <span class="brand-mark--shell" data-go-home tabindex="0" role="button" aria-label="Ir al inicio de KORA">
-                <img src="assets/img/icono.svg" alt="Marca KORA">
-            </span>
-        </div>
-    </header>
-
-    <main class="stage">
-        <section class="device-shell">
-            <div class="device-frame" data-device-frame="phone">
-                <div class="device-hardware">
-                    <div class="device-notch"></div>
-                    <div class="device-camera"></div>
-                    <div class="device-speaker"></div>
-                    <div class="device-tablet-bar"></div>
-                    <div class="device-led"></div>
+            <div class="shell-actions">
+                <div class="device-switches" role="tablist" aria-label="Cambiar dispositivo">
+                    <button class="toolbar-btn is-active" type="button" data-device-option="phone">Celular</button>
+                    <button class="toolbar-btn" type="button" data-device-option="tablet">Tablet</button>
+                    <button class="toolbar-btn" type="button" data-device-option="desktop">Computador</button>
                 </div>
-
-                <div class="device-screen">
-                    <div class="app-surface" data-device-shell data-device="phone">
-                        <aside class="app-sidebar">
-                            <div class="sidebar-brand">
-                                <div class="sidebar-brand-lockup" data-go-home tabindex="0" role="button" aria-label="Ir al inicio de KORA">
+                <div class="toolbar-utilities">
+                    <button class="toolbar-btn" type="button" data-theme-toggle>Modo claro</button>
+                    <button class="toolbar-btn" type="button" data-open-login>Perfiles demo</button>
+                    <button class="toolbar-btn" type="button" data-reset-state>Reiniciar</button>
+                </div>
+                <span class="brand-mark--shell" data-go-home tabindex="0" role="button" aria-label="Ir al inicio de KORA">
+                    <img src="assets/img/icono.svg" alt="Marca KORA">
+                </span>
+            </div>
+        </header>
+    
+        <main class="stage">
+            <section class="device-shell">
+                <div class="device-frame" data-device-frame="phone">
+                    <div class="device-hardware">
+                        <div class="device-notch"></div>
+                        <div class="device-camera"></div>
+                        <div class="device-speaker"></div>
+                        <div class="device-tablet-bar"></div>
+                        <div class="device-led"></div>
+                    </div>
+    
+                    <div class="device-screen">
+                        <div class="app-surface" data-device-shell data-device="phone">
+                            <aside class="app-sidebar">
+                                <div class="sidebar-brand">
+                                    <div class="sidebar-brand-lockup" data-go-home tabindex="0" role="button" aria-label="Ir al inicio de KORA">
+                                        <img src="assets/img/icono.svg" alt="Marca KORA">
+                                    </div>
+                                    <button class="profile-chip" type="button" data-open-login>
+                                        <img src="assets/img/luna-catalina-martinez.svg" alt="Perfil" data-profile-avatar>
+                                        <div>
+                                            <strong data-profile-name>Luna Catalina Martinez</strong>
+                                            <span data-profile-role>Oyente exploradora</span>
+                                        </div>
+                                    </button>
+                                </div>
+    
+                                <nav class="sidebar-nav" aria-label="Secciones">
+                                    <button class="nav-link is-active" type="button" data-view-target="discover">Descubrir</button>
+                                    <button class="nav-link" type="button" data-view-target="player">Player</button>
+                                    <button class="nav-link" type="button" data-view-target="events">Eventos</button>
+                                    <button class="nav-link" type="button" data-view-target="community">Comunidad</button>
+                                    <button class="nav-link" type="button" data-view-target="profile">Perfil</button>
+                                </nav>
+    
+                                <div class="sidebar-stack">
+                                    <article class="panel-card compact-card">
+                                        <p class="eyebrow">Cuenta activa</p>
+                                        <strong data-profile-level>Nivel demo</strong>
+                                        <div class="pill-row">
+                                            <span class="mini-pill">XP <strong data-profile-xp>0</strong></span>
+                                            <span class="mini-pill">Racha <strong data-profile-streak>0</strong></span>
+                                        </div>
+                                    </article>
+                                    <article class="panel-card compact-card">
+                                        <p class="eyebrow">Accesos</p>
+                                        <div class="sidebar-actions">
+                                            <button class="soft-btn" type="button" data-open-settings>Ajustes</button>
+                                            <button class="soft-btn" type="button" data-open-team>Equipo KORA</button>
+                                        </div>
+                                    </article>
+                                </div>
+                            </aside>
+    
+                            <div class="status-bar">
+                                <span data-live-time>00:00</span>
+                                <div class="status-icons">
+                                    <span>5G</span>
+                                    <span class="status-icon status-icon--signal"></span>
+                                    <span class="status-icon"></span>
+                                    <span class="status-icon status-icon--battery"></span>
+                                </div>
+                            </div>
+    
+                            <header class="app-header">
+                                <div class="device-brandbar" data-go-home tabindex="0" role="button" aria-label="Ir al inicio de KORA">
                                     <img src="assets/img/icono.svg" alt="Marca KORA">
                                 </div>
-                                <button class="profile-chip" type="button" data-open-login>
-                                    <img src="assets/img/luna-catalina-martinez.svg" alt="Perfil" data-profile-avatar>
+                                <div class="profile-main">
+                                    <img src="assets/img/luna-catalina-martinez.svg" alt="Perfil" class="profile-main-avatar" data-profile-avatar>
                                     <div>
-                                        <strong data-profile-name>Luna Catalina Martinez</strong>
-                                        <span data-profile-role>Oyente exploradora</span>
+                                        <p class="eyebrow">KORA demo</p>
+                                        <h1 class="app-title" data-profile-name>Luna Catalina Martinez</h1>
+                                        <p class="profile-sub" data-profile-role>Oyente exploradora</p>
                                     </div>
-                                </button>
-                            </div>
-
-                            <nav class="sidebar-nav" aria-label="Secciones">
-                                <button class="nav-link is-active" type="button" data-view-target="discover">Descubrir</button>
-                                <button class="nav-link" type="button" data-view-target="player">Player</button>
-                                <button class="nav-link" type="button" data-view-target="events">Eventos</button>
-                                <button class="nav-link" type="button" data-view-target="community">Comunidad</button>
-                                <button class="nav-link" type="button" data-view-target="profile">Perfil</button>
-                            </nav>
-
-                            <div class="sidebar-stack">
-                                <article class="panel-card compact-card">
-                                    <p class="eyebrow">Cuenta activa</p>
-                                    <strong data-profile-level>Nivel demo</strong>
-                                    <div class="pill-row">
-                                        <span class="mini-pill">XP <strong data-profile-xp>0</strong></span>
-                                        <span class="mini-pill">Racha <strong data-profile-streak>0</strong></span>
-                                    </div>
-                                </article>
-                                <article class="panel-card compact-card">
-                                    <p class="eyebrow">Accesos</p>
-                                    <div class="sidebar-actions">
-                                        <button class="soft-btn" type="button" data-open-settings>Ajustes</button>
-                                        <button class="soft-btn" type="button" data-open-team>Equipo KORA</button>
-                                    </div>
-                                </article>
-                            </div>
-                        </aside>
-
-                        <div class="status-bar">
-                            <span data-live-time>00:00</span>
-                            <div class="status-icons">
-                                <span>5G</span>
-                                <span class="status-icon status-icon--signal"></span>
-                                <span class="status-icon"></span>
-                                <span class="status-icon status-icon--battery"></span>
-                            </div>
-                        </div>
-
-                        <header class="app-header">
-                            <div class="device-brandbar" data-go-home tabindex="0" role="button" aria-label="Ir al inicio de KORA">
-                                <img src="assets/img/icono.svg" alt="Marca KORA">
-                            </div>
-                            <div class="profile-main">
-                                <img src="assets/img/luna-catalina-martinez.svg" alt="Perfil" class="profile-main-avatar" data-profile-avatar>
-                                <div>
-                                    <p class="eyebrow">KORA demo</p>
-                                    <h1 class="app-title" data-profile-name>Luna Catalina Martinez</h1>
-                                    <p class="profile-sub" data-profile-role>Oyente exploradora</p>
                                 </div>
-                            </div>
-                            <div class="header-actions">
-                                <button class="icon-btn" type="button" aria-label="Cambiar tema" data-theme-toggle-icon>☀</button>
-                                <button class="icon-btn" type="button" aria-label="Abrir ajustes" data-open-settings>⚙</button>
-                            </div>
-                        </header>
-
-                        <section class="app-main content-scroll">
-                            <section class="view is-active" data-view="discover">
-                                <article class="hero-card" data-featured-card></article>
-
-                                <div class="section-head">
-                                    <div>
-                                        <p class="eyebrow">Capsulas</p>
-                                        <h2 class="section-title">Descubrir con contexto</h2>
-                                    </div>
-                                    <button class="soft-btn small-btn" type="button" data-cycle-capsules>Siguiente</button>
+                                <div class="header-actions">
+                                    <button class="icon-btn" type="button" aria-label="Cambiar tema" data-theme-toggle-icon>☀</button>
+                                    <button class="icon-btn" type="button" aria-label="Abrir ajustes" data-open-settings>⚙</button>
                                 </div>
-                                <div class="capsule-feed" data-capsule-feed></div>
-
-                                <div class="dual-grid">
+                            </header>
+    
+                            <section class="app-main content-scroll">
+                                <section class="view is-active" data-view="discover">
+                                    <article class="hero-card" data-featured-card></article>
+                                    <article class="panel-card role-demo-spotlight hidden" data-role-demo-spotlight></article>
+    
+                                    <div class="section-head">
+                                        <div>
+                                            <p class="eyebrow">Capsulas</p>
+                                            <h2 class="section-title">Descubrir con contexto</h2>
+                                        </div>
+                                        <button class="soft-btn small-btn" type="button" data-cycle-capsules>Siguiente</button>
+                                    </div>
+                                    <div class="capsule-feed" data-capsule-feed></div>
+    
+                                    <div class="dual-grid">
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Tablero de hallazgos</strong>
+                                                <span class="mini-pill" data-saved-count>0</span>
+                                            </div>
+                                            <div class="stack-list" data-saved-board></div>
+                                        </article>
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Etiquetas culturales</strong>
+                                                <span class="mini-pill">curaduria local</span>
+                                            </div>
+                                            <div class="tag-cloud" data-discover-tags></div>
+                                            <p class="helper-copy">Las cápsulas priorizan identidad local, validación rápida y contexto cultural.</p>
+                                        </article>
+                                    </div>
+                                </section>
+    
+                                <section class="view" data-view="player">
+                                    <article class="player-card">
+                                        <img class="player-cover" src="assets/img/cover-valentina-cruz.svg" alt="Cover" data-player-cover>
+                                        <div class="player-meta">
+                                            <p class="eyebrow">Capsula activa</p>
+                                            <h2 data-player-track>Rio de Fuego</h2>
+                                            <p data-player-name>Valentina Cruz · R&B afrolatino</p>
+                                            <p class="player-story" data-player-story></p>
+                                            <div class="pill-row">
+                                                <span class="mini-pill" data-player-duration>0:30</span>
+                                                <span class="mini-pill" data-player-match>94% match</span>
+                                                <button class="mini-pill interactive-pill" type="button" data-toggle-preview>Modo 30s</button>
+                                            </div>
+                                        </div>
+                                    </article>
+    
+                                    <article class="panel-card">
+                                        <div class="audio-progress-wrap">
+                                            <input type="range" min="0" max="30" step="0.1" value="0" data-player-range>
+                                            <div class="player-times">
+                                                <span data-player-current>0:00</span>
+                                                <span data-player-total>0:30</span>
+                                            </div>
+                                        </div>
+                                        <div class="player-controls">
+                                            <button class="icon-btn big-icon" type="button" data-player-prev aria-label="Anterior">⟨</button>
+                                            <button class="primary-btn player-toggle" type="button" data-player-toggle>Reproducir</button>
+                                            <button class="icon-btn big-icon" type="button" data-player-next aria-label="Siguiente">⟩</button>
+                                        </div>
+                                        <div class="player-actions">
+                                            <button class="soft-btn" type="button" data-player-like>Like</button>
+                                            <button class="soft-btn" type="button" data-player-save>Guardar</button>
+                                            <button class="soft-btn" type="button" data-player-share>Compartir</button>
+                                        </div>
+                                    </article>
+    
+                                    <div class="dual-grid">
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Cola demo</strong>
+                                                <span class="mini-pill">audio real</span>
+                                            </div>
+                                            <div class="queue-list" data-player-queue></div>
+                                        </article>
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Lectura rapida</strong>
+                                                <span class="mini-pill">barrio / escena / idioma</span>
+                                            </div>
+                                            <div class="insight-stack" data-player-insights></div>
+                                        </article>
+                                    </div>
+    
+                                    <div class="dual-grid dual-grid--reviews">
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Reseñas y cápsulas</strong>
+                                                <span class="mini-pill" data-review-summary-count>0 reseñas</span>
+                                            </div>
+                                            <div class="review-summary" data-player-review-summary></div>
+                                            <form class="review-form" data-review-form></form>
+                                        </article>
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Comunidad</strong>
+                                                <span class="mini-pill" data-review-average>Sin rating</span>
+                                            </div>
+                                            <div class="review-list" data-review-list></div>
+                                        </article>
+                                    </div>
+                                </section>
+    
+                                <section class="view" data-view="events">
+                                    <div class="dual-grid dual-grid--events">
+                                        <article class="map-card panel-card">
+                                            <div class="panel-head">
+                                                <strong>Mapa de eventos</strong>
+                                                <span class="mini-pill">sin GPS real</span>
+                                            </div>
+                                            <div class="map-surface" data-event-map></div>
+                                        </article>
+                                        <article class="panel-card" data-event-preview></article>
+                                    </div>
+    
                                     <article class="panel-card">
                                         <div class="panel-head">
-                                            <strong>Tablero de hallazgos</strong>
-                                            <span class="mini-pill" data-saved-count>0</span>
+                                            <strong>Ruta territorial</strong>
+                                            <span class="mini-pill" data-event-count>0 eventos</span>
                                         </div>
-                                        <div class="stack-list" data-saved-board></div>
+                                        <div class="events-grid" data-events-list></div>
                                     </article>
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Etiquetas culturales</strong>
-                                            <span class="mini-pill">curaduria local</span>
-                                        </div>
-                                        <div class="tag-cloud" data-discover-tags></div>
-                                        <p class="helper-copy">Las cápsulas priorizan identidad local, validación rápida y contexto cultural.</p>
-                                    </article>
-                                </div>
+                                </section>
+    
+                                <section class="view" data-view="community">
+                                    <div class="dual-grid dual-grid--community">
+                                        <article class="panel-card" data-playlist-card></article>
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Compartir cápsula</strong>
+                                                <span class="mini-pill">⇧</span>
+                                            </div>
+                                            <div class="share-grid" data-share-grid></div>
+                                            <div class="community-actions">
+                                                <button class="primary-btn" type="button" data-add-playlist>Aportar a playlist</button>
+                                                <button class="soft-btn" type="button" data-open-team>Ver equipo</button>
+                                            </div>
+                                        </article>
+                                    </div>
+    
+                                    <div class="dual-grid">
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Ranking de usuarios</strong>
+                                                <span class="mini-pill">gamificacion</span>
+                                            </div>
+                                            <div class="stack-list" data-user-leaderboard></div>
+                                        </article>
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Ranking de artistas</strong>
+                                                <span class="mini-pill">visibilidad local</span>
+                                            </div>
+                                            <div class="stack-list" data-artist-leaderboard></div>
+                                        </article>
+                                    </div>
+                                </section>
+    
+                                <section class="view" data-view="profile">
+                                    <article class="panel-card role-demo-workspace hidden" data-role-demo-workspace></article>
+    
+                                    <div class="dual-grid dual-grid--profile">
+                                        <article class="panel-card" data-profile-overview></article>
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Sellos y logros</strong>
+                                                <span class="mini-pill">pasaporte</span>
+                                            </div>
+                                            <div class="stamp-grid" data-stamps-grid-main></div>
+                                            <button class="soft-btn full-btn" type="button" data-open-team>Equipo KORA</button>
+                                        </article>
+                                    </div>
+    
+                                    <div class="dual-grid">
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Mis favoritos</strong>
+                                                <span class="mini-pill">guardados</span>
+                                            </div>
+                                            <div class="favorites-grid" data-favorite-list></div>
+                                        </article>
+                                        <article class="panel-card">
+                                            <div class="panel-head">
+                                                <strong>Badges activos</strong>
+                                                <span class="mini-pill">perfil</span>
+                                            </div>
+                                            <div class="tag-cloud" data-badge-list></div>
+                                            <div class="profile-actions">
+                                                <button class="soft-btn" type="button" data-open-settings>Editar ajustes</button>
+                                                <button class="soft-btn" type="button" data-open-login>Cambiar perfil</button>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </section>
                             </section>
-
-                            <section class="view" data-view="player">
-                                <article class="player-card">
-                                    <img class="player-cover" src="assets/img/cover-valentina-cruz.svg" alt="Cover" data-player-cover>
-                                    <div class="player-meta">
-                                        <p class="eyebrow">Capsula activa</p>
-                                        <h2 data-player-track>Rio de Fuego</h2>
-                                        <p data-player-name>Valentina Cruz · R&B afrolatino</p>
-                                        <p class="player-story" data-player-story></p>
-                                        <div class="pill-row">
-                                            <span class="mini-pill" data-player-duration>0:30</span>
-                                            <span class="mini-pill" data-player-match>94% match</span>
-                                            <button class="mini-pill interactive-pill" type="button" data-toggle-preview>Modo 30s</button>
-                                        </div>
-                                    </div>
-                                </article>
-
-                                <article class="panel-card">
-                                    <div class="audio-progress-wrap">
-                                        <input type="range" min="0" max="30" step="0.1" value="0" data-player-range>
-                                        <div class="player-times">
-                                            <span data-player-current>0:00</span>
-                                            <span data-player-total>0:30</span>
-                                        </div>
-                                    </div>
-                                    <div class="player-controls">
-                                        <button class="icon-btn big-icon" type="button" data-player-prev aria-label="Anterior">⟨</button>
-                                        <button class="primary-btn player-toggle" type="button" data-player-toggle>Reproducir</button>
-                                        <button class="icon-btn big-icon" type="button" data-player-next aria-label="Siguiente">⟩</button>
-                                    </div>
-                                    <div class="player-actions">
-                                        <button class="soft-btn" type="button" data-player-like>Like</button>
-                                        <button class="soft-btn" type="button" data-player-save>Guardar</button>
-                                        <button class="soft-btn" type="button" data-player-share>Compartir</button>
-                                    </div>
-                                </article>
-
-                                <div class="dual-grid">
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Cola demo</strong>
-                                            <span class="mini-pill">audio real</span>
-                                        </div>
-                                        <div class="queue-list" data-player-queue></div>
-                                    </article>
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Lectura rapida</strong>
-                                            <span class="mini-pill">barrio / escena / idioma</span>
-                                        </div>
-                                        <div class="insight-stack" data-player-insights></div>
-                                    </article>
-                                </div>
-
-                                <div class="dual-grid dual-grid--reviews">
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Reseñas y cápsulas</strong>
-                                            <span class="mini-pill" data-review-summary-count>0 reseñas</span>
-                                        </div>
-                                        <div class="review-summary" data-player-review-summary></div>
-                                        <form class="review-form" data-review-form></form>
-                                    </article>
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Comunidad</strong>
-                                            <span class="mini-pill" data-review-average>Sin rating</span>
-                                        </div>
-                                        <div class="review-list" data-review-list></div>
-                                    </article>
-                                </div>
-                            </section>
-
-                            <section class="view" data-view="events">
-                                <div class="dual-grid dual-grid--events">
-                                    <article class="map-card panel-card">
-                                        <div class="panel-head">
-                                            <strong>Mapa de eventos</strong>
-                                            <span class="mini-pill">sin GPS real</span>
-                                        </div>
-                                        <div class="map-surface" data-event-map></div>
-                                    </article>
-                                    <article class="panel-card" data-event-preview></article>
-                                </div>
-
+    
+                            <aside class="app-rail content-scroll">
+                                <article class="panel-card" data-now-playing-card></article>
                                 <article class="panel-card">
                                     <div class="panel-head">
-                                        <strong>Ruta territorial</strong>
-                                        <span class="mini-pill" data-event-count>0 eventos</span>
+                                        <strong>Misiones</strong>
+                                        <span class="mini-pill">objetivos</span>
                                     </div>
-                                    <div class="events-grid" data-events-list></div>
+                                    <div class="missions-list" data-missions-list></div>
                                 </article>
-                            </section>
-
-                            <section class="view" data-view="community">
-                                <div class="dual-grid dual-grid--community">
-                                    <article class="panel-card" data-playlist-card></article>
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Compartir cápsula</strong>
-                                            <span class="mini-pill">⇧</span>
-                                        </div>
-                                        <div class="share-grid" data-share-grid></div>
-                                        <div class="community-actions">
-                                            <button class="primary-btn" type="button" data-add-playlist>Aportar a playlist</button>
-                                            <button class="soft-btn" type="button" data-open-team>Ver equipo</button>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="dual-grid">
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Ranking de usuarios</strong>
-                                            <span class="mini-pill">gamificacion</span>
-                                        </div>
-                                        <div class="stack-list" data-user-leaderboard></div>
-                                    </article>
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Ranking de artistas</strong>
-                                            <span class="mini-pill">visibilidad local</span>
-                                        </div>
-                                        <div class="stack-list" data-artist-leaderboard></div>
-                                    </article>
-                                </div>
-                            </section>
-
-                            <section class="view" data-view="profile">
-                                <div class="dual-grid dual-grid--profile">
-                                    <article class="panel-card" data-profile-overview></article>
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Sellos y logros</strong>
-                                            <span class="mini-pill">pasaporte</span>
-                                        </div>
-                                        <div class="stamp-grid" data-stamps-grid-main></div>
-                                        <button class="soft-btn full-btn" type="button" data-open-team>Equipo KORA</button>
-                                    </article>
-                                </div>
-
-                                <div class="dual-grid">
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Mis favoritos</strong>
-                                            <span class="mini-pill">guardados</span>
-                                        </div>
-                                        <div class="favorites-grid" data-favorite-list></div>
-                                    </article>
-                                    <article class="panel-card">
-                                        <div class="panel-head">
-                                            <strong>Badges activos</strong>
-                                            <span class="mini-pill">perfil</span>
-                                        </div>
-                                        <div class="tag-cloud" data-badge-list></div>
-                                        <div class="profile-actions">
-                                            <button class="soft-btn" type="button" data-open-settings>Editar ajustes</button>
-                                            <button class="soft-btn" type="button" data-open-login>Cambiar perfil</button>
-                                        </div>
-                                    </article>
-                                </div>
-                            </section>
-                        </section>
-
-                        <aside class="app-rail content-scroll">
-                            <article class="panel-card" data-now-playing-card></article>
-                            <article class="panel-card">
-                                <div class="panel-head">
-                                    <strong>Misiones</strong>
-                                    <span class="mini-pill">objetivos</span>
-                                </div>
-                                <div class="missions-list" data-missions-list></div>
-                            </article>
-                            <article class="panel-card">
-                                <div class="panel-head">
-                                    <strong>Pasaporte cultural</strong>
-                                    <span class="mini-pill">sellos</span>
-                                </div>
-                                <div class="stamp-grid" data-stamps-grid-rail></div>
-                            </article>
-                        </aside>
-
-                        <nav class="bottom-nav" aria-label="Navegacion movil">
-                            <button class="is-active" type="button" data-view-target="discover">Inicio</button>
-                            <button type="button" data-view-target="player">Player</button>
-                            <button type="button" data-view-target="events">Eventos</button>
-                            <button type="button" data-view-target="community">Comunidad</button>
-                            <button type="button" data-view-target="profile">Perfil</button>
-                        </nav>
+                                <article class="panel-card">
+                                    <div class="panel-head">
+                                        <strong>Pasaporte cultural</strong>
+                                        <span class="mini-pill">sellos</span>
+                                    </div>
+                                    <div class="stamp-grid" data-stamps-grid-rail></div>
+                                </article>
+                            </aside>
+    
+                            <nav class="bottom-nav" aria-label="Navegacion movil">
+                                <button class="is-active" type="button" data-view-target="discover">Inicio</button>
+                                <button type="button" data-view-target="player">Player</button>
+                                <button type="button" data-view-target="events">Eventos</button>
+                                <button type="button" data-view-target="community">Comunidad</button>
+                                <button type="button" data-view-target="profile">Perfil</button>
+                            </nav>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-</div>
-
-<div class="overlay" data-login-overlay>
-    <div class="overlay-card overlay-card--wide">
-        <div class="overlay-head">
-            <div>
-                <p class="eyebrow">Login / logout simulado</p>
-                <h2>Escoge el perfil para entrar a KORA.</h2>
-            </div>
-            <button class="icon-btn" type="button" data-close-login>✕</button>
-        </div>
-        <div class="overlay-sections">
-            <section>
-                <div class="section-head simple-head">
-                    <div>
-                        <p class="eyebrow">Equipo</p>
-                        <h3 class="section-title small-title">Oyentes del proyecto</h3>
-                    </div>
-                </div>
-                <div class="profile-grid" data-team-profiles></div>
             </section>
-            <section>
-                <div class="section-head simple-head">
-                    <div>
-                        <p class="eyebrow">Roles demo</p>
-                        <h3 class="section-title small-title">Artista, embajador, gestor y scout</h3>
+        </main>
+    </div>
+    
+    <div class="overlay" data-login-overlay>
+        <div class="overlay-card overlay-card--wide">
+            <div class="overlay-head">
+                <div>
+                    <p class="eyebrow">Login / logout simulado</p>
+                    <h2>Escoge el perfil para entrar a KORA.</h2>
+                </div>
+                <button class="icon-btn" type="button" data-close-login>✕</button>
+            </div>
+            <div class="overlay-sections">
+                <section>
+                    <div class="section-head simple-head">
+                        <div>
+                            <p class="eyebrow">Equipo</p>
+                            <h3 class="section-title small-title">Oyentes del proyecto</h3>
+                        </div>
+                    </div>
+                    <div class="profile-grid" data-team-profiles></div>
+                </section>
+                <section>
+                    <div class="section-head simple-head">
+                        <div>
+                            <p class="eyebrow">Roles demo</p>
+                            <h3 class="section-title small-title">Artista, embajador, gestor y scout</h3>
+                        </div>
+                    </div>
+                    <div class="profile-grid" data-role-profiles></div>
+                </section>
+            </div>
+            <div class="overlay-actions">
+                <button class="soft-btn" type="button" data-go-login-page>Abrir login</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="overlay" data-settings-overlay>
+        <div class="overlay-card">
+            <div class="overlay-head">
+                <div>
+                    <p class="eyebrow">Ajustes</p>
+                    <h2>Configuración de la demo.</h2>
+                </div>
+                <button class="icon-btn" type="button" data-close-settings>✕</button>
+            </div>
+            <div class="settings-stack" data-settings-content></div>
+            <div class="overlay-actions">
+                <button class="soft-btn" type="button" data-open-login>Cambiar perfil</button>
+                <button class="danger-btn" type="button" data-logout>Logout</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="overlay" data-team-overlay>
+        <div class="overlay-card">
+            <div class="overlay-head">
+                <div>
+                    <p class="eyebrow">Equipo KORA</p>
+                    <h2>Equipo de desarrollo.</h2>
+                </div>
+                <button class="icon-btn" type="button" data-close-team>✕</button>
+            </div>
+            <div class="team-modal-grid" data-team-modal-grid></div>
+        </div>
+    </div>
+    
+    <div class="overlay" data-scanner-overlay>
+        <div class="overlay-card">
+            <div class="overlay-head">
+                <div>
+                    <p class="eyebrow">Check-in QR</p>
+                    <h2 data-scanner-title>Escanear evento</h2>
+                </div>
+                <button class="icon-btn" type="button" data-close-scanner>✕</button>
+            </div>
+            <div class="scanner-layout">
+                <img class="scanner-poster" src="assets/img/poster-festival-centro.svg" alt="Poster del evento" data-scanner-poster>
+                <div class="scanner-side">
+                    <img class="scanner-qr" src="assets/img/qr-festival-centro.svg" alt="QR del evento" data-scanner-qr>
+                    <p class="helper-copy" data-scanner-copy>Escanea o usa la simulación para reclamar tu sello y XP.</p>
+                    <div class="overlay-actions overlay-actions--column">
+                        <button class="primary-btn" type="button" data-simulate-checkin>Simular escaneo</button>
+                        <a class="soft-btn link-btn" href="qr-checkin.html?event=festival-centro" target="_blank" rel="noopener" data-open-qr-page>Abrir QR full page</a>
                     </div>
                 </div>
-                <div class="profile-grid" data-role-profiles></div>
-            </section>
-        </div>
-        <div class="overlay-actions">
-            <button class="soft-btn" type="button" data-go-login-page>Abrir login</button>
-        </div>
-    </div>
-</div>
-
-<div class="overlay" data-settings-overlay>
-    <div class="overlay-card">
-        <div class="overlay-head">
-            <div>
-                <p class="eyebrow">Ajustes</p>
-                <h2>Configuración de la demo.</h2>
-            </div>
-            <button class="icon-btn" type="button" data-close-settings>✕</button>
-        </div>
-        <div class="settings-stack" data-settings-content></div>
-        <div class="overlay-actions">
-            <button class="soft-btn" type="button" data-open-login>Cambiar perfil</button>
-            <button class="danger-btn" type="button" data-logout>Logout</button>
-        </div>
-    </div>
-</div>
-
-<div class="overlay" data-team-overlay>
-    <div class="overlay-card">
-        <div class="overlay-head">
-            <div>
-                <p class="eyebrow">Equipo KORA</p>
-                <h2>Equipo de desarrollo.</h2>
-            </div>
-            <button class="icon-btn" type="button" data-close-team>✕</button>
-        </div>
-        <div class="team-modal-grid" data-team-modal-grid></div>
-    </div>
-</div>
-
-<div class="overlay" data-scanner-overlay>
-    <div class="overlay-card">
-        <div class="overlay-head">
-            <div>
-                <p class="eyebrow">Check-in QR</p>
-                <h2 data-scanner-title>Escanear evento</h2>
-            </div>
-            <button class="icon-btn" type="button" data-close-scanner>✕</button>
-        </div>
-        <div class="scanner-layout">
-            <img class="scanner-poster" src="assets/img/poster-festival-centro.svg" alt="Poster del evento" data-scanner-poster>
-            <div class="scanner-side">
-                <img class="scanner-qr" src="assets/img/qr-festival-centro.svg" alt="QR del evento" data-scanner-qr>
-                <p class="helper-copy" data-scanner-copy>Escanea o usa la simulación para reclamar tu sello y XP.</p>
-                <div class="overlay-actions overlay-actions--column">
-                    <button class="primary-btn" type="button" data-simulate-checkin>Simular escaneo</button>
-                    <a class="soft-btn link-btn" href="qr-checkin.html?event=festival-centro" target="_blank" rel="noopener" data-open-qr-page>Abrir QR full page</a>
-                </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="toast" data-toast aria-live="polite"></div>
-
-<script src="assets/data/data.js"></script>
-<script type="module" src="assets/js/app.js"></script>
-</body>
-</html>
+    
+    <div class="toast" data-toast aria-live="polite"></div>
+    
+    <script src="assets/data/data.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
+    </body>
+    </html>
