@@ -1650,11 +1650,36 @@
         justify-content: space-between;
         gap: 1rem;
     }
-    
+
     .profile-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
         gap: 0.95rem;
+    }
+
+    [data-team-profiles],
+    #login-team-grid,
+    [data-role-profiles],
+    #login-role-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    @media (max-width: 980px) {
+        [data-team-profiles],
+        #login-team-grid,
+        [data-role-profiles],
+        #login-role-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 720px) {
+        [data-team-profiles],
+        #login-team-grid,
+        [data-role-profiles],
+        #login-role-grid {
+            grid-template-columns: 1fr;
+        }
     }
     
     .profile-card,
