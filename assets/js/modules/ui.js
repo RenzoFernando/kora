@@ -39,6 +39,13 @@ function applyDevice(state) {
   });
 }
 
+function applyImmersive(state) {
+  const immersive = Boolean(state.immersive);
+  document.documentElement.dataset.immersive = immersive ? 'true' : 'false';
+  document.body.classList.toggle('is-immersive', immersive);
+  syncImmersiveButtons(immersive);
+}
+
 function applyContrast(state) {
   document.body.classList.toggle('high-contrast', Boolean(state.settings.highContrast));
 }
@@ -63,6 +70,22 @@ function syncThemeButtons(theme) {
     button.dataset.nextTheme = nextTheme;
     button.textContent = iconLabel;
     button.setAttribute('aria-label', textLabel);
+  });
+}
+
+function syncImmersiveButtons(immersive) {
+  const textLabel = immersive ? 'Comprimir' : 'Expandir';
+  const ariaLabel = immersive ? 'Comprimir interfaz' : 'Expandir interfaz';
+  const iconLabel = immersive ? '⤡' : '⤢';
+  $$('[data-expand-toggle]').forEach((button) => {
+    button.textContent = textLabel;
+    button.setAttribute('aria-label', ariaLabel);
+    button.setAttribute('title', textLabel);
+  });
+  $$('[data-expand-toggle-icon]').forEach((button) => {
+    button.textContent = iconLabel;
+    button.setAttribute('aria-label', ariaLabel);
+    button.setAttribute('title', textLabel);
   });
 }
 
@@ -135,6 +158,7 @@ function burstNotesFrom(node) {
 export {
   applyContrast,
   applyDevice,
+  applyImmersive,
   applyTheme,
   burstNotesFrom,
   closeAllOverlays,
@@ -144,6 +168,7 @@ export {
   renderViewOnly,
   scrollAppToTop,
   showToast,
+  syncImmersiveButtons,
   syncThemeButtons,
   updateClock
 };
