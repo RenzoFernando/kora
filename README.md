@@ -19,10 +19,8 @@ Todos aparecen en la demo como perfiles de oyentes:
 - Luna Catalina Martinez · A00401964
 - Renzo Mosquera Daza · A00401681
 - Johan Stiven Guzman · A00401480
-- Angela Quitiaquez · A00395494
 - Karold Lizeth Mejia Orozco · A00401806
-- Juan David Pacheco · A00401844
-- David Vergara Laverde · A00402237
+
 
 ## Roles demo adicionales
 
